@@ -8,5 +8,7 @@
 import Foundation
 
 enum Asset: String {
-  case train
+    case lightMax = "light.max"
+    case lightMin = "light.min"
+    case chevronDown = "chevron.down"
 }

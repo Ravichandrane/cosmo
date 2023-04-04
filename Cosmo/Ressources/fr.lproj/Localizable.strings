@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  Cosmo
+
+  Created by Ravi Rajendran on 04/04/2023.
+  
+*/
+
+// Navigation Title
+navigation.devicesListView.title = "Cosmo";
+navigation.deviceDetailView.title = "Détail";
+
+// Device detail
+deviceDetail.section.title.product = "Product";
+deviceDetail.section.title.settings = "Settings";
+deviceDetail.section.title.information = "Information";
+
+deviceDetail.row.label.model = "Modèle";
+deviceDetail.row.label.installationMode = "Mode d'installation";
+deviceDetail.row.label.lightIntensity = "Intensité lumineuse";
+deviceDetail.row.label.brakeLight = "Feu de freinage";
+deviceDetail.row.label.lightMode = "Mode lumière";
+deviceDetail.row.label.lightAuto = "Lumière automatique";
+deviceDetail.row.label.firmware = "Firmware";
+deviceDetail.row.label.macAddress = "Mac Address";
+deviceDetail.row.label.serialNumber = "Numéro de série";

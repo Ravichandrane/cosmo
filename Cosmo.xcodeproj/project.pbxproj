@@ -10,7 +10,9 @@
 		41101BC929DC6A7100AEB2E3 /* DeviceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */; };
 		41DEE18229DC85B3001E4E1F /* NavigationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DEE18129DC85B3001E4E1F /* NavigationViewModifier.swift */; };
 		41DEE18429DC85B8001E4E1F /* View+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DEE18329DC85B8001E4E1F /* View+Navigation.swift */; };
-		41DEE18729DC8734001E4E1F /* DeviceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DEE18629DC8734001E4E1F /* DeviceListItemView.swift */; };
+		41DEE18929DC8C74001E4E1F /* DeviceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DEE18829DC8C74001E4E1F /* DeviceDetailView.swift */; };
+		41DEE18C29DCBB39001E4E1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41DEE18E29DCBB39001E4E1F /* Localizable.strings */; };
+		41DEE19129DCCA76001E4E1F /* DeviceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DEE19029DCCA76001E4E1F /* DeviceDetailViewModel.swift */; };
 		41F4B21029DC6C51004A70D4 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4B20F29DC6C51004A70D4 /* Device.swift */; };
 		41F8F24C29DB5131007EE035 /* AppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F24B29DB5131007EE035 /* AppLauncher.swift */; };
 		41F8F24E29DB5131007EE035 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F24D29DB5131007EE035 /* DeviceListView.swift */; };
@@ -46,7 +48,10 @@
 		41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModel.swift; sourceTree = "<group>"; };
 		41DEE18129DC85B3001E4E1F /* NavigationViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModifier.swift; sourceTree = "<group>"; };
 		41DEE18329DC85B8001E4E1F /* View+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Navigation.swift"; sourceTree = "<group>"; };
-		41DEE18629DC8734001E4E1F /* DeviceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListItemView.swift; sourceTree = "<group>"; };
+		41DEE18829DC8C74001E4E1F /* DeviceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailView.swift; sourceTree = "<group>"; };
+		41DEE18D29DCBB39001E4E1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41DEE18F29DCBB3C001E4E1F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		41DEE19029DCCA76001E4E1F /* DeviceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewModel.swift; sourceTree = "<group>"; };
 		41F4B20F29DC6C51004A70D4 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		41F8F24829DB5131007EE035 /* Cosmo α.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmo α.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F8F24B29DB5131007EE035 /* AppLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauncher.swift; sourceTree = "<group>"; };
@@ -98,14 +103,6 @@
 				41DEE18129DC85B3001E4E1F /* NavigationViewModifier.swift */,
 			);
 			path = Modifiers;
-			sourceTree = "<group>";
-		};
-		41DEE18529DC867E001E4E1F /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				41DEE18629DC8734001E4E1F /* DeviceListItemView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		41F8F23F29DB5131007EE035 = {
@@ -178,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				41F8F27C29DB5319007EE035 /* DeviceList */,
-				41F8F27D29DB5321007EE035 /* DeviceListDetail */,
+				41F8F27D29DB5321007EE035 /* DeviceDetail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -198,6 +195,7 @@
 			children = (
 				41F8F24F29DB5131007EE035 /* Assets.xcassets */,
 				41F8F28B29DB543D007EE035 /* Colors.xcassets */,
+				41DEE18E29DCBB39001E4E1F /* Localizable.strings */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -215,16 +213,17 @@
 			children = (
 				41F8F24D29DB5131007EE035 /* DeviceListView.swift */,
 				41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */,
-				41DEE18529DC867E001E4E1F /* Components */,
 			);
 			path = DeviceList;
 			sourceTree = "<group>";
 		};
-		41F8F27D29DB5321007EE035 /* DeviceListDetail */ = {
+		41F8F27D29DB5321007EE035 /* DeviceDetail */ = {
 			isa = PBXGroup;
 			children = (
+				41DEE18829DC8C74001E4E1F /* DeviceDetailView.swift */,
+				41DEE19029DCCA76001E4E1F /* DeviceDetailViewModel.swift */,
 			);
-			path = DeviceListDetail;
+			path = DeviceDetail;
 			sourceTree = "<group>";
 		};
 		41F8F27E29DB5379007EE035 /* Services */ = {
@@ -318,7 +317,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				fr,
 			);
 			mainGroup = 41F8F23F29DB5131007EE035;
 			productRefGroup = 41F8F24929DB5131007EE035 /* Products */;
@@ -336,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41DEE18C29DCBB39001E4E1F /* Localizable.strings in Resources */,
 				41F8F28C29DB543D007EE035 /* Colors.xcassets in Resources */,
 				41F8F25329DB5131007EE035 /* Preview Assets.xcassets in Resources */,
 				41F8F25029DB5131007EE035 /* Assets.xcassets in Resources */,
@@ -364,15 +364,16 @@
 				41F8F29229DB54D1007EE035 /* Asset.swift in Sources */,
 				41DEE18429DC85B8001E4E1F /* View+Navigation.swift in Sources */,
 				41F8F24E29DB5131007EE035 /* DeviceListView.swift in Sources */,
+				41DEE18929DC8C74001E4E1F /* DeviceDetailView.swift in Sources */,
 				41F8F28129DB5391007EE035 /* APIRouteable.swift in Sources */,
 				41F8F28329DB539C007EE035 /* APIRequestable.swift in Sources */,
 				41F8F2A029DC03A1007EE035 /* Configuration.swift in Sources */,
 				41F8F29429DB54FA007EE035 /* Appearance.swift in Sources */,
-				41DEE18729DC8734001E4E1F /* DeviceListItemView.swift in Sources */,
 				41F4B21029DC6C51004A70D4 /* Device.swift in Sources */,
 				41F8F29029DB54BE007EE035 /* Localization.swift in Sources */,
 				41101BC929DC6A7100AEB2E3 /* DeviceListViewModel.swift in Sources */,
 				41F8F24C29DB5131007EE035 /* AppLauncher.swift in Sources */,
+				41DEE19129DCCA76001E4E1F /* DeviceDetailViewModel.swift in Sources */,
 				41F8F28529DB53C3007EE035 /* DeviceService.swift in Sources */,
 				41F8F28A29DB5428007EE035 /* Color+Extension.swift in Sources */,
 			);
@@ -395,6 +396,18 @@
 			targetProxy = 41F8F25929DB5132007EE035 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		41DEE18E29DCBB39001E4E1F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41DEE18D29DCBB39001E4E1F /* en */,
+				41DEE18F29DCBB3C001E4E1F /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		41F8F26A29DB5132007EE035 /* Debug */ = {
@@ -524,7 +537,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmo/App/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -559,7 +571,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmo/App/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -695,7 +706,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmo/App/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -751,7 +761,7 @@
 				41F8F29B29DC01FF007EE035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Staging;
+			defaultConfigurationName = Release;
 		};
 		41F8F26C29DB5132007EE035 /* Build configuration list for PBXNativeTarget "Cosmo" */ = {
 			isa = XCConfigurationList;
@@ -761,7 +771,7 @@
 				41F8F29C29DC01FF007EE035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Staging;
+			defaultConfigurationName = Release;
 		};
 		41F8F26F29DB5132007EE035 /* Build configuration list for PBXNativeTarget "CosmoTests" */ = {
 			isa = XCConfigurationList;
@@ -771,7 +781,7 @@
 				41F8F29D29DC01FF007EE035 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Staging;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
