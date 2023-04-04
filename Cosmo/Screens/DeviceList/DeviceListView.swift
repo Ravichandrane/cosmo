@@ -8,12 +8,24 @@
 import SwiftUI
 
 struct DeviceListView: View {
-    // MARK: - Body
+    // Properties
+    @StateObject private var viewModel: DeviceListViewModel = .init()
+    
+    // Body
     var body: some View {
-        VStack {
-            let _ = print(AppConstant.baseUrl)
-            Text("Hello, world!")
+        NavigationView {
+            ScrollView {
+                LazyVStack(alignment: .leading) {
+                    ForEach(viewModel.devicesList, id: \.id, content: { device in
+                        DeviceListItemView(device: device)
+                    })
+                }
+            }
+            .navigation(title: "Cosmo" ,displayMode: .inline)
+            .navigationBarTitleDisplayMode(.inline)
+            .task {
+                await viewModel.fetchDevices()
+            }
         }
-        .padding()
     }
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41101BC929DC6A7100AEB2E3 /* DeviceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */; };
+		41DEE18229DC85B3001E4E1F /* NavigationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DEE18129DC85B3001E4E1F /* NavigationViewModifier.swift */; };
+		41DEE18429DC85B8001E4E1F /* View+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DEE18329DC85B8001E4E1F /* View+Navigation.swift */; };
+		41DEE18729DC8734001E4E1F /* DeviceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DEE18629DC8734001E4E1F /* DeviceListItemView.swift */; };
+		41F4B21029DC6C51004A70D4 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4B20F29DC6C51004A70D4 /* Device.swift */; };
 		41F8F24C29DB5131007EE035 /* AppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F24B29DB5131007EE035 /* AppLauncher.swift */; };
 		41F8F24E29DB5131007EE035 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F24D29DB5131007EE035 /* DeviceListView.swift */; };
 		41F8F25029DB5131007EE035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F8F24F29DB5131007EE035 /* Assets.xcassets */; };
@@ -38,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModel.swift; sourceTree = "<group>"; };
+		41DEE18129DC85B3001E4E1F /* NavigationViewModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewModifier.swift; sourceTree = "<group>"; };
+		41DEE18329DC85B8001E4E1F /* View+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Navigation.swift"; sourceTree = "<group>"; };
+		41DEE18629DC8734001E4E1F /* DeviceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListItemView.swift; sourceTree = "<group>"; };
+		41F4B20F29DC6C51004A70D4 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		41F8F24829DB5131007EE035 /* Cosmo α.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmo α.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F8F24B29DB5131007EE035 /* AppLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauncher.swift; sourceTree = "<group>"; };
 		41F8F24D29DB5131007EE035 /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
@@ -82,6 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41DEE18029DC85A7001E4E1F /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				41DEE18129DC85B3001E4E1F /* NavigationViewModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		41DEE18529DC867E001E4E1F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				41DEE18629DC8734001E4E1F /* DeviceListItemView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		41F8F23F29DB5131007EE035 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				41F8F28629DB53E3007EE035 /* Extensions */,
+				41DEE18029DC85A7001E4E1F /* Modifiers */,
 				41F8F27E29DB5379007EE035 /* Services */,
 			);
 			path = Common;
@@ -178,6 +205,7 @@
 		41F8F27B29DB52DC007EE035 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				41F4B20F29DC6C51004A70D4 /* Device.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				41F8F24D29DB5131007EE035 /* DeviceListView.swift */,
+				41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */,
+				41DEE18529DC867E001E4E1F /* Components */,
 			);
 			path = DeviceList;
 			sourceTree = "<group>";
@@ -218,8 +248,9 @@
 		41F8F28629DB53E3007EE035 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				41F8F28729DB53F1007EE035 /* String+URL.swift */,
 				41F8F28929DB5428007EE035 /* Color+Extension.swift */,
+				41F8F28729DB53F1007EE035 /* String+URL.swift */,
+				41DEE18329DC85B8001E4E1F /* View+Navigation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,15 +358,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				41F8F28829DB53F1007EE035 /* String+URL.swift in Sources */,
+				41DEE18229DC85B3001E4E1F /* NavigationViewModifier.swift in Sources */,
 				41F8F28E29DB5479007EE035 /* Colors.swift in Sources */,
 				41F8F27729DB52A2007EE035 /* AppConstant.swift in Sources */,
 				41F8F29229DB54D1007EE035 /* Asset.swift in Sources */,
+				41DEE18429DC85B8001E4E1F /* View+Navigation.swift in Sources */,
 				41F8F24E29DB5131007EE035 /* DeviceListView.swift in Sources */,
 				41F8F28129DB5391007EE035 /* APIRouteable.swift in Sources */,
 				41F8F28329DB539C007EE035 /* APIRequestable.swift in Sources */,
 				41F8F2A029DC03A1007EE035 /* Configuration.swift in Sources */,
 				41F8F29429DB54FA007EE035 /* Appearance.swift in Sources */,
+				41DEE18729DC8734001E4E1F /* DeviceListItemView.swift in Sources */,
+				41F4B21029DC6C51004A70D4 /* Device.swift in Sources */,
 				41F8F29029DB54BE007EE035 /* Localization.swift in Sources */,
+				41101BC929DC6A7100AEB2E3 /* DeviceListViewModel.swift in Sources */,
 				41F8F24C29DB5131007EE035 /* AppLauncher.swift in Sources */,
 				41F8F28529DB53C3007EE035 /* DeviceService.swift in Sources */,
 				41F8F28A29DB5428007EE035 /* Color+Extension.swift in Sources */,
@@ -492,7 +528,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = "$(IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -527,7 +563,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = "$(IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -663,7 +699,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = "$(IPHONEOS_DEPLOYMENT_TARGET)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
