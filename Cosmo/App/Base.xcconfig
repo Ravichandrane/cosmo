@@ -1,0 +1,14 @@
+//
+//  Base.xcconfig
+//  Cosmo
+//
+//  Created by Ravi Rajendran on 04/04/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+IPHONEOS_DEPLOYMENT_TARGET = 15.0
+MARKETING_VERSION = 1.0.0 // App version (Major.Minor.Patch)
+CURRENT_PROJECT_VERSION = 1 // Build version
+PRODUCT_NAME = $(TARGET_NAME)
