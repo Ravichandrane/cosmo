@@ -13,6 +13,7 @@ struct DeviceListView: View {
         var id: Self { self }
         
         case deviceListDetailView(device: Device)
+        case discoveryDevice
     }
     
     @StateObject private var viewModel: DeviceListViewModel = .init()
@@ -25,11 +26,25 @@ struct DeviceListView: View {
                 deviceList
             }
             .navigation(title: L10n.Navigation.Title.devicesListView, displayMode: .inline)
-            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItem(
+                    placement: .navigationBarTrailing,
+                    content: {
+                        Button(action: {
+                            activeSheet = .discoveryDevice
+                        }, label: {
+                            Image(systemName: Asset.connect.rawValue)
+                        })
+                        .frame(height: Constant.trailingNavigationBarItemHeight, alignment: .trailing)
+                    }
+                )
+            }
             .sheet(item: $activeSheet, content: { activeSheet in
                 switch activeSheet {
                 case .deviceListDetailView(let device):
                     DeviceDetailView(viewModel: .init(device: device))
+                case .discoveryDevice:
+                    DiscoveryView()
                 }
             })
             .task {
@@ -43,6 +58,7 @@ struct DeviceListView: View {
 private extension DeviceListView {
     enum Constant {
         static let firmwareLabelOpacity: CGFloat = 0.5
+        static let trailingNavigationBarItemHeight: CGFloat = 96
     }
     
     @ViewBuilder

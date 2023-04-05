@@ -8,11 +8,24 @@
 import Foundation
 
 enum L10n {
+    enum Button {
+        static let openSettings = L10n.tr("button.openSettings")
+    }
+    
     enum Navigation {
-      enum Title {
-        static let devicesListView = L10n.tr("navigation.devicesListView.title")
-        static let deviceDetailView = L10n.tr("navigation.deviceDetailView.title")
-      }
+        enum Title {
+            static let devicesListView = L10n.tr("navigation.devicesListView.title")
+            static let deviceDetailView = L10n.tr("navigation.deviceDetailView.title")
+        }
+    }
+    
+    enum Authorization {
+        enum Title {
+            static let bluetooth = L10n.tr("authorization.title.bluetooth")
+        }
+        enum Message {
+            static let bluetooth = L10n.tr("authorization.message.bluetooth")
+        }
     }
     
     enum DeviceDetail {

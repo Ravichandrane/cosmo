@@ -11,4 +11,5 @@ enum Asset: String {
     case lightMax = "light.max"
     case lightMin = "light.min"
     case chevronDown = "chevron.down"
+    case connect = "bonjour"
 }

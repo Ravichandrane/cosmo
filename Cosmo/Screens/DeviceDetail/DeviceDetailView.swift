@@ -72,7 +72,6 @@ struct DeviceDetailView: View {
 
 // MARK: - UI
 private extension DeviceDetailView {
-    
     @ViewBuilder
     func rowView(label: String, _ text: String) -> some View {
         HStack {
@@ -84,5 +83,4 @@ private extension DeviceDetailView {
                 .font(.system(size: Appearance.FontSize.small))
         }
     }
-    
 }

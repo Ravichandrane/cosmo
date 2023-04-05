@@ -6,15 +6,21 @@
   
 */
 
+// Button
+button.openSettings = "Open Settings";
+
 // Navigation Title
 navigation.devicesListView.title = "Cosmo";
-navigation.deviceDetailView.title = "Detail";
+navigation.deviceDetailView.title = "Détail";
+
+// Authorization
+authorization.title.bluetooth = "Bluetooth access";
+authorization.message.bluetooth = "Our app use Bluetooth to display\ndevices around you.";
 
 // Device detail
 deviceDetail.section.title.product = "Product";
 deviceDetail.section.title.settings = "Settings";
 deviceDetail.section.title.information = "Information";
-
 deviceDetail.row.label.model = "Model";
 deviceDetail.row.label.installationMode = "Installation mode";
 deviceDetail.row.label.lightIntensity = "Light intensity";

@@ -5,7 +5,7 @@
 //  Created by Ravi Rajendran on 04/04/2023.
 //
 
-import Foundation
+import UIKit
 
 enum AppConstant {
     static var baseUrl: String {
@@ -14,6 +14,16 @@ enum AppConstant {
             return "https://\(url)/test"
         } catch {
             fatalError("API base url could not found inside Info.plist")
+        }
+    }
+    
+    static func openSettings() {
+        DispatchQueue.main.async {
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
+
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                UIApplication.shared.open(settingsUrl, completionHandler: nil)
+            }
         }
     }
 }
