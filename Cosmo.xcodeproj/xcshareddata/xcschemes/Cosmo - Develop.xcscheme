@@ -34,7 +34,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "411FE04029DDE79C00671668"
+               BlueprintIdentifier = "411FE07829DDE8A200671668"
                BuildableName = "CosmoTests.xctest"
                BlueprintName = "CosmoTests"
                ReferencedContainer = "container:Cosmo.xcodeproj">

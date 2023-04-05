@@ -6,6 +6,13 @@
   
 */
 
+// Common
+common.loading = "Loading";
+common.retry = "Réessayer";
+
+// Error
+error.network.message.tryAgain = "Something went wrong \n please try again";
+
 // Button
 button.openSettings = "Ouvrir les paramètres";
 

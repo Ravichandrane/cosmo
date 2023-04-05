@@ -11,6 +11,5 @@
 #include "Base.xcconfig"
 
 API_BASE_URL = cosmo-api.develop-sr3snxi-x6u2x52ooksf4.de-2.platformsh.site
-TARGET_NAME = Cosmo α
 PRODUCT_BUNDLE_IDENTIFIER = fr.ravi-develop.Cosmo
 DEBUG_INFORMATION_FORMAT = dwarf

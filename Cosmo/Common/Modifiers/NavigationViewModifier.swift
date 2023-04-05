@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct NavigationViewModifier: ViewModifier {
-
+    // Properties
     private var title: String
     private var displayMode: NavigationBarItem.TitleDisplayMode
     
+    // MARK: - Initializer
     init(
         title: String = "",
         displayMode: NavigationBarItem.TitleDisplayMode,
@@ -33,10 +34,9 @@ struct NavigationViewModifier: ViewModifier {
         UINavigationBar.appearance().scrollEdgeAppearance = scrollAppearance
     }
     
-    public func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
         content
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(displayMode)
     }
-    
 }

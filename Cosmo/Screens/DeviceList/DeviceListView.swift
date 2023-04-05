@@ -21,35 +21,43 @@ struct DeviceListView: View {
     
     // Body
     var body: some View {
-        NavigationView {
-            ScrollView {
-                deviceList
-            }
-            .navigation(title: L10n.Navigation.Title.devicesListView, displayMode: .inline)
-            .toolbar{
-                ToolbarItem(
-                    placement: .navigationBarTrailing,
-                    content: {
-                        Button(action: {
-                            activeSheet = .discoveryDevice
-                        }, label: {
-                            Image(systemName: Asset.connect.rawValue)
-                        })
-                        .frame(height: Constant.trailingNavigationBarItemHeight, alignment: .trailing)
+        ZStack {
+            switch viewModel.state {
+            case .loading:
+                loadingView
+            case .loaded:
+                NavigationView {
+                    ScrollView {
+                        deviceList
                     }
-                )
-            }
-            .sheet(item: $activeSheet, content: { activeSheet in
-                switch activeSheet {
-                case .deviceListDetailView(let device):
-                    DeviceDetailView(viewModel: .init(device: device))
-                case .discoveryDevice:
-                    DiscoveryView()
+                    .navigation(title: L10n.Navigation.Title.devicesListView, displayMode: .inline)
+                    .toolbar{
+                        ToolbarItem(
+                            placement: .navigationBarTrailing,
+                            content: {
+                                Button(action: {
+                                    activeSheet = .discoveryDevice
+                                }, label: {
+                                    Image(systemName: Asset.connect.rawValue)
+                                })
+                                .frame(height: Constant.trailingNavigationBarItemHeight, alignment: .trailing)
+                            }
+                        )
+                    }
+                    .sheet(item: $activeSheet, content: { activeSheet in
+                        switch activeSheet {
+                        case .deviceListDetailView(let device):
+                            DeviceDetailView(viewModel: .init(device: device))
+                        case .discoveryDevice:
+                            DiscoveryView()
+                        }
+                    })
                 }
-            })
-            .task {
-                await viewModel.fetchDevices()
+            case .error:
+                errorView
             }
+        }.task {
+            await viewModel.fetchDevices()
         }
     }
 }
@@ -59,6 +67,57 @@ private extension DeviceListView {
     enum Constant {
         static let firmwareLabelOpacity: CGFloat = 0.5
         static let trailingNavigationBarItemHeight: CGFloat = 96
+        static let sfSymbolsIconSize: CGFloat = 30
+        static let errorViewVStack: CGFloat = 10
+        static let errorViewTextPadding: CGFloat = 20
+        static let errorViewIconSize: CGFloat = 30
+        static let errorViewFontSize: CGFloat = 20
+    }
+
+    var loadingView: some View {
+        ProgressView {
+            Text(L10n.Common.loading)
+                .font(.title2)
+        }
+    }
+    var errorView: some View {
+      VStack(spacing: Constant.errorViewVStack) {
+          Image(systemName: Asset.exclamationmark.rawValue)
+            .font(.system(size: Constant.sfSymbolsIconSize, weight: .bold))
+            .foregroundColor(Color.red)
+
+          Text(L10n.Error.Network.Message.tryAgain)
+            .padding([.leading, .trailing], Constant.errorViewTextPadding)
+            .multilineTextAlignment(.center)
+            .font(.system(size: Constant.errorViewFontSize, weight: .bold))
+            .foregroundColor(Color(uiColor: UIColor.darkText))
+          
+          Button(action: {
+              Task {
+                await viewModel.fetchDevices()
+              }
+          }, label: {
+              Text(L10n.Common.retry)
+          })
+          .buttonStyle(.borderedProminent)
+      }
+    }
+    
+    var deviceList: some View {
+        LazyVStack(alignment: .leading, spacing: Appearance.Padding.small) {
+            ForEach(viewModel.devicesList, id: \.id, content: { device in
+                ItemView(device: device)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        activeSheet = .deviceListDetailView(device: device)
+                    }
+                    .padding([.leading, .trailing], Appearance.Padding.normal)
+                
+                if device != viewModel.devicesList.last {
+                    Divider()
+                }
+            })
+        }.padding(.top, Appearance.Padding.small)
     }
     
     @ViewBuilder
@@ -86,22 +145,5 @@ private extension DeviceListView {
                 }
             }.font(.system(size: Appearance.FontSize.normal, weight: .black))
         }
-    }
-    
-    var deviceList: some View {
-        LazyVStack(alignment: .leading, spacing: Appearance.Padding.small) {
-            ForEach(viewModel.devicesList, id: \.id, content: { device in
-                ItemView(device: device)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        activeSheet = .deviceListDetailView(device: device)
-                    }
-                    .padding([.leading, .trailing], Appearance.Padding.normal)
-                
-                if device != viewModel.devicesList.last {
-                    Divider()
-                }
-            })
-        }.padding(.top, Appearance.Padding.small)
     }
 }

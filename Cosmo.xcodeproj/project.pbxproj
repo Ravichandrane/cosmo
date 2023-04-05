@@ -11,7 +11,14 @@
 		411FE03029DDC87800671668 /* DiscoveryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE02F29DDC87800671668 /* DiscoveryDetailView.swift */; };
 		411FE03229DDC88300671668 /* DiscoveryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE03129DDC88300671668 /* DiscoveryDetailViewModel.swift */; };
 		411FE03429DDDEC900671668 /* DismissToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE03329DDDEC900671668 /* DismissToolbarModifier.swift */; };
-		411FE07C29DDE8A200671668 /* CosmoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE07B29DDE8A200671668 /* CosmoTests.swift */; };
+		413F4A1B29DDF42500813078 /* MockAPIRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F4A1629DDF42500813078 /* MockAPIRequestable.swift */; };
+		413F4A1C29DDF42500813078 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F4A1729DDF42500813078 /* MockURLProtocol.swift */; };
+		413F4A1D29DDF42500813078 /* MockDeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F4A1829DDF42500813078 /* MockDeviceService.swift */; };
+		413F4A1E29DDF42500813078 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F4A1A29DDF42500813078 /* JSONReader.swift */; };
+		413F4A2129DDF51B00813078 /* DeviceSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 413F4A2029DDF51B00813078 /* DeviceSuccess.json */; };
+		413F4A2529DDF58500813078 /* DeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F4A2429DDF58500813078 /* DeviceTests.swift */; };
+		413F4A2A29DDFF7400813078 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F4A2929DDFF7400813078 /* StringTests.swift */; };
+		413F4A2C29DE019F00813078 /* DeviceListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413F4A2B29DE019F00813078 /* DeviceListViewModelTests.swift */; };
 		4166EFC529DCE8B5004929D0 /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166EFC429DCE8B5004929D0 /* DiscoveryView.swift */; };
 		4166EFC829DCED17004929D0 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166EFC729DCED17004929D0 /* BLEManager.swift */; };
 		4166EFCA29DCFF59004929D0 /* DiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166EFC929DCFF59004929D0 /* DiscoveryViewModel.swift */; };
@@ -30,9 +37,6 @@
 		41F8F28329DB539C007EE035 /* APIRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F28229DB539C007EE035 /* APIRequestable.swift */; };
 		41F8F28529DB53C3007EE035 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F28429DB53C3007EE035 /* DeviceService.swift */; };
 		41F8F28829DB53F1007EE035 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F28729DB53F1007EE035 /* String+URL.swift */; };
-		41F8F28A29DB5428007EE035 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F28929DB5428007EE035 /* Color+Extension.swift */; };
-		41F8F28C29DB543D007EE035 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F8F28B29DB543D007EE035 /* Colors.xcassets */; };
-		41F8F28E29DB5479007EE035 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F28D29DB5479007EE035 /* Colors.swift */; };
 		41F8F29029DB54BE007EE035 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F28F29DB54BE007EE035 /* Localization.swift */; };
 		41F8F29229DB54D1007EE035 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F29129DB54D1007EE035 /* Asset.swift */; };
 		41F8F29429DB54FA007EE035 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8F29329DB54FA007EE035 /* Appearance.swift */; };
@@ -41,7 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		411FE07D29DDE8A200671668 /* PBXContainerItemProxy */ = {
+		413F4A0E29DDF3ED00813078 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 41F8F24029DB5131007EE035 /* Project object */;
 			proxyType = 1;
@@ -55,8 +59,15 @@
 		411FE02F29DDC87800671668 /* DiscoveryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailView.swift; sourceTree = "<group>"; };
 		411FE03129DDC88300671668 /* DiscoveryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailViewModel.swift; sourceTree = "<group>"; };
 		411FE03329DDDEC900671668 /* DismissToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissToolbarModifier.swift; sourceTree = "<group>"; };
-		411FE07929DDE8A200671668 /* CosmoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		411FE07B29DDE8A200671668 /* CosmoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoTests.swift; sourceTree = "<group>"; };
+		413F4A0A29DDF3ED00813078 /* CosmoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		413F4A1629DDF42500813078 /* MockAPIRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockAPIRequestable.swift; sourceTree = "<group>"; };
+		413F4A1729DDF42500813078 /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		413F4A1829DDF42500813078 /* MockDeviceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDeviceService.swift; sourceTree = "<group>"; };
+		413F4A1A29DDF42500813078 /* JSONReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
+		413F4A2029DDF51B00813078 /* DeviceSuccess.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DeviceSuccess.json; sourceTree = "<group>"; };
+		413F4A2429DDF58500813078 /* DeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTests.swift; sourceTree = "<group>"; };
+		413F4A2929DDFF7400813078 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		413F4A2B29DE019F00813078 /* DeviceListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModelTests.swift; sourceTree = "<group>"; };
 		4166EFC429DCE8B5004929D0 /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		4166EFC729DCED17004929D0 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		4166EFC929DCFF59004929D0 /* DiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewModel.swift; sourceTree = "<group>"; };
@@ -67,7 +78,7 @@
 		41DEE18F29DCBB3C001E4E1F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		41DEE19029DCCA76001E4E1F /* DeviceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewModel.swift; sourceTree = "<group>"; };
 		41F4B20F29DC6C51004A70D4 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		41F8F24829DB5131007EE035 /* Cosmo α.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cosmo α.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F8F24829DB5131007EE035 /* Cosmo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cosmo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F8F24B29DB5131007EE035 /* AppLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauncher.swift; sourceTree = "<group>"; };
 		41F8F24D29DB5131007EE035 /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
 		41F8F24F29DB5131007EE035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,9 +88,6 @@
 		41F8F28229DB539C007EE035 /* APIRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestable.swift; sourceTree = "<group>"; };
 		41F8F28429DB53C3007EE035 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		41F8F28729DB53F1007EE035 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
-		41F8F28929DB5428007EE035 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		41F8F28B29DB543D007EE035 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		41F8F28D29DB5479007EE035 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		41F8F28F29DB54BE007EE035 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		41F8F29129DB54D1007EE035 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		41F8F29329DB54FA007EE035 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
@@ -92,7 +100,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		411FE07629DDE8A200671668 /* Frameworks */ = {
+		413F4A0729DDF3ED00813078 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -118,12 +126,83 @@
 			path = DiscoveryDetail;
 			sourceTree = "<group>";
 		};
-		411FE07A29DDE8A200671668 /* CosmoTests */ = {
+		413F4A0B29DDF3ED00813078 /* CosmoTests */ = {
 			isa = PBXGroup;
 			children = (
-				411FE07B29DDE8A200671668 /* CosmoTests.swift */,
+				413F4A2229DDF54800813078 /* Models */,
+				413F4A2629DDFF1600813078 /* ViewModels */,
+				413F4A2729DDFF4D00813078 /* Common */,
+				413F4A1429DDF42500813078 /* Ressources */,
 			);
 			path = CosmoTests;
+			sourceTree = "<group>";
+		};
+		413F4A1429DDF42500813078 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				413F4A1F29DDF4E800813078 /* Assets */,
+				413F4A1529DDF42500813078 /* Mock */,
+				413F4A1929DDF42500813078 /* Tool */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		413F4A1529DDF42500813078 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				413F4A1629DDF42500813078 /* MockAPIRequestable.swift */,
+				413F4A1729DDF42500813078 /* MockURLProtocol.swift */,
+				413F4A1829DDF42500813078 /* MockDeviceService.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		413F4A1929DDF42500813078 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				413F4A1A29DDF42500813078 /* JSONReader.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		413F4A1F29DDF4E800813078 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				413F4A2029DDF51B00813078 /* DeviceSuccess.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		413F4A2229DDF54800813078 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				413F4A2429DDF58500813078 /* DeviceTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		413F4A2629DDFF1600813078 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				413F4A2B29DE019F00813078 /* DeviceListViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		413F4A2729DDFF4D00813078 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				413F4A2829DDFF5F00813078 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		413F4A2829DDFF5F00813078 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				413F4A2929DDFF7400813078 /* StringTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4166EFC329DCE896004929D0 /* Discovery */ = {
@@ -156,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				41F8F24A29DB5131007EE035 /* Cosmo */,
-				411FE07A29DDE8A200671668 /* CosmoTests */,
+				413F4A0B29DDF3ED00813078 /* CosmoTests */,
 				41F8F24929DB5131007EE035 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -164,8 +243,8 @@
 		41F8F24929DB5131007EE035 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				41F8F24829DB5131007EE035 /* Cosmo α.app */,
-				411FE07929DDE8A200671668 /* CosmoTests.xctest */,
+				41F8F24829DB5131007EE035 /* Cosmo.app */,
+				413F4A0A29DDF3ED00813078 /* CosmoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,7 +278,6 @@
 				41F8F29329DB54FA007EE035 /* Appearance.swift */,
 				41F8F29129DB54D1007EE035 /* Asset.swift */,
 				41F8F29F29DC03A1007EE035 /* Configuration.swift */,
-				41F8F28D29DB5479007EE035 /* Colors.swift */,
 				41F8F28F29DB54BE007EE035 /* Localization.swift */,
 				41F8F29A29DC018C007EE035 /* Info.plist */,
 				41F8F29529DB562D007EE035 /* Base.xcconfig */,
@@ -236,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				41F8F24F29DB5131007EE035 /* Assets.xcassets */,
-				41F8F28B29DB543D007EE035 /* Colors.xcassets */,
 				41DEE18E29DCBB39001E4E1F /* Localizable.strings */,
 			);
 			path = Ressources;
@@ -289,7 +366,6 @@
 		41F8F28629DB53E3007EE035 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				41F8F28929DB5428007EE035 /* Color+Extension.swift */,
 				41F8F28729DB53F1007EE035 /* String+URL.swift */,
 				41DEE18329DC85B8001E4E1F /* View+Navigation.swift */,
 			);
@@ -299,22 +375,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		411FE07829DDE8A200671668 /* CosmoTests */ = {
+		413F4A0929DDF3ED00813078 /* CosmoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 411FE07F29DDE8A200671668 /* Build configuration list for PBXNativeTarget "CosmoTests" */;
+			buildConfigurationList = 413F4A1029DDF3ED00813078 /* Build configuration list for PBXNativeTarget "CosmoTests" */;
 			buildPhases = (
-				411FE07529DDE8A200671668 /* Sources */,
-				411FE07629DDE8A200671668 /* Frameworks */,
-				411FE07729DDE8A200671668 /* Resources */,
+				413F4A0629DDF3ED00813078 /* Sources */,
+				413F4A0729DDF3ED00813078 /* Frameworks */,
+				413F4A0829DDF3ED00813078 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				411FE07E29DDE8A200671668 /* PBXTargetDependency */,
+				413F4A0F29DDF3ED00813078 /* PBXTargetDependency */,
 			);
 			name = CosmoTests;
 			productName = CosmoTests;
-			productReference = 411FE07929DDE8A200671668 /* CosmoTests.xctest */;
+			productReference = 413F4A0A29DDF3ED00813078 /* CosmoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		41F8F24729DB5131007EE035 /* Cosmo */ = {
@@ -331,7 +407,7 @@
 			);
 			name = Cosmo;
 			productName = Cosmo;
-			productReference = 41F8F24829DB5131007EE035 /* Cosmo α.app */;
+			productReference = 41F8F24829DB5131007EE035 /* Cosmo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -344,7 +420,7 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					411FE07829DDE8A200671668 = {
+					413F4A0929DDF3ED00813078 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 41F8F24729DB5131007EE035;
 					};
@@ -367,16 +443,17 @@
 			projectRoot = "";
 			targets = (
 				41F8F24729DB5131007EE035 /* Cosmo */,
-				411FE07829DDE8A200671668 /* CosmoTests */,
+				413F4A0929DDF3ED00813078 /* CosmoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		411FE07729DDE8A200671668 /* Resources */ = {
+		413F4A0829DDF3ED00813078 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				413F4A2129DDF51B00813078 /* DeviceSuccess.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +462,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				41DEE18C29DCBB39001E4E1F /* Localizable.strings in Resources */,
-				41F8F28C29DB543D007EE035 /* Colors.xcassets in Resources */,
 				41F8F25329DB5131007EE035 /* Preview Assets.xcassets in Resources */,
 				41F8F25029DB5131007EE035 /* Assets.xcassets in Resources */,
 				41F8F29629DB562D007EE035 /* Base.xcconfig in Resources */,
@@ -395,11 +471,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		411FE07529DDE8A200671668 /* Sources */ = {
+		413F4A0629DDF3ED00813078 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				411FE07C29DDE8A200671668 /* CosmoTests.swift in Sources */,
+				413F4A1C29DDF42500813078 /* MockURLProtocol.swift in Sources */,
+				413F4A1E29DDF42500813078 /* JSONReader.swift in Sources */,
+				413F4A1D29DDF42500813078 /* MockDeviceService.swift in Sources */,
+				413F4A1B29DDF42500813078 /* MockAPIRequestable.swift in Sources */,
+				413F4A2A29DDFF7400813078 /* StringTests.swift in Sources */,
+				413F4A2C29DE019F00813078 /* DeviceListViewModelTests.swift in Sources */,
+				413F4A2529DDF58500813078 /* DeviceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +491,6 @@
 			files = (
 				41F8F28829DB53F1007EE035 /* String+URL.swift in Sources */,
 				41DEE18229DC85B3001E4E1F /* NavigationViewModifier.swift in Sources */,
-				41F8F28E29DB5479007EE035 /* Colors.swift in Sources */,
 				41F8F27729DB52A2007EE035 /* AppConstant.swift in Sources */,
 				411FE03429DDDEC900671668 /* DismissToolbarModifier.swift in Sources */,
 				41F8F29229DB54D1007EE035 /* Asset.swift in Sources */,
@@ -431,17 +512,16 @@
 				41DEE19129DCCA76001E4E1F /* DeviceDetailViewModel.swift in Sources */,
 				41F8F28529DB53C3007EE035 /* DeviceService.swift in Sources */,
 				411FE03029DDC87800671668 /* DiscoveryDetailView.swift in Sources */,
-				41F8F28A29DB5428007EE035 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		411FE07E29DDE8A200671668 /* PBXTargetDependency */ = {
+		413F4A0F29DDF3ED00813078 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 41F8F24729DB5131007EE035 /* Cosmo */;
-			targetProxy = 411FE07D29DDE8A200671668 /* PBXContainerItemProxy */;
+			targetProxy = 413F4A0E29DDF3ED00813078 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -458,7 +538,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		411FE08029DDE8A200671668 /* Debug */ = {
+		413F4A1129DDF3ED00813078 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -470,14 +550,17 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.ravi.CosmoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cosmo α.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cosmo α";
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cosmo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cosmo";
 			};
 			name = Debug;
 		};
-		411FE08129DDE8A200671668 /* Staging */ = {
+		413F4A1229DDF3ED00813078 /* Staging */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,14 +572,17 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.ravi.CosmoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cosmo α.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cosmo α";
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cosmo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cosmo";
 			};
 			name = Staging;
 		};
-		411FE08229DDE8A200671668 /* Release */ = {
+		413F4A1329DDF3ED00813078 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,10 +594,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.ravi.CosmoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cosmo α.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cosmo α";
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cosmo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cosmo";
 			};
 			name = Release;
 		};
@@ -795,12 +884,12 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		411FE07F29DDE8A200671668 /* Build configuration list for PBXNativeTarget "CosmoTests" */ = {
+		413F4A1029DDF3ED00813078 /* Build configuration list for PBXNativeTarget "CosmoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				411FE08029DDE8A200671668 /* Debug */,
-				411FE08129DDE8A200671668 /* Staging */,
-				411FE08229DDE8A200671668 /* Release */,
+				413F4A1129DDF3ED00813078 /* Debug */,
+				413F4A1229DDF3ED00813078 /* Staging */,
+				413F4A1329DDF3ED00813078 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,31 +11,34 @@ import Foundation
 final class DeviceListViewModel: ObservableObject {
     // Properties
     enum State {
-        case idle
         case loading
         case loaded
         case error
     }
     
     @Published private(set) var devicesList: [Device] = []
-    @Published private(set) var state: State = .idle
+    @Published private(set) var state: State = .loading
 
-    private let deviceService: DeviceService
+    private let deviceService: DeviceRouteable
     
     // MARK: - Initializer
-    init(deviceService: DeviceService = .init()) {
+    init(deviceService: DeviceRouteable = DeviceService()) {
         self.deviceService = deviceService
     }
-    
+}
+
+// MARK: - Methods
+extension DeviceListViewModel {
     func fetchDevices() async {
-        state = .loading
-        
+        if state != .loading {
+            state = .loading
+        }
+    
         do {
             let devices = try await deviceService.getDevices()
             devicesList = devices[Device.rootKey] ?? []
             state = .loaded
         } catch {
-            print("error \(error)")
             state = .error
         }
     }

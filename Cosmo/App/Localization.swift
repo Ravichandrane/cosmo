@@ -8,6 +8,19 @@
 import Foundation
 
 enum L10n {
+    enum Common {
+        static let loading = L10n.tr("common.loading")
+        static let retry = L10n.tr("common.retry")
+    }
+    
+    enum Error {
+      enum Network {
+          enum Message {
+              static let tryAgain = L10n.tr("error.network.message.tryAgain")
+          }
+      }
+    }
+    
     enum Button {
         static let openSettings = L10n.tr("button.openSettings")
     }
