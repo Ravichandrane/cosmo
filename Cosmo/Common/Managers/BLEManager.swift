@@ -14,10 +14,7 @@ protocol BLEManagerDelegate: AnyObject {
 }
 
 final class BLEManager: NSObject {
-    // Properties
-    @Published private(set) var updateState: CBManagerState = .unknown
-    @Published private(set) var peripheral: CBPeripheral?
-    
+    // Properties    
     private var central: CBCentralManager!
     weak var delegate: BLEManagerDelegate?
     
