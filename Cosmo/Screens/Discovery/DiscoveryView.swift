@@ -10,6 +10,7 @@ import SwiftUI
 struct DiscoveryView: View {
     // Properties
     @StateObject private var viewModel: DiscoveryViewModel = .init()
+    @State private var isPresentingDetailView: Bool = false
     
     // Body
     var body: some View {
@@ -21,7 +22,7 @@ struct DiscoveryView: View {
                 default:
                     permissionView
                 }
-            }.navigation(title: "Discovery", displayMode: .inline)
+            }.navigation(title: L10n.Navigation.Title.discovery, displayMode: .inline)
         }
         .onAppear {
             viewModel.requestPermission()
@@ -39,7 +40,6 @@ struct DiscoveryView: View {
 
 // MARK: - UI
 private extension DiscoveryView {
-    
     var permissionView: some View {
         VStack(spacing: Appearance.Padding.small) {
             Image(systemName: Asset.connect.rawValue)
@@ -65,12 +65,25 @@ private extension DiscoveryView {
         List {
             Section(content: {
                 connectedDevicesContent
-            }, header: { headerSection(withTitle: "My Devices") })
+            }, header: {
+                headerSection(withTitle: L10n.Discovery.Section.Title.myDevices)
+            })
             
             Section(content: {
                 searchDevicesContent
-            }, header: { headerSection(withTitle: "Other devices", isSpinning: true) })
-        }
+            }, header: {
+                headerSection(withTitle: L10n.Discovery.Section.Title.otherDevices,
+                              isSpinning: true)
+            })
+        }.background(content: {
+            NavigationLink(
+                destination: DiscoveryDetailView(
+                    viewModel: .init(characteristics: viewModel.getCharacteristics())
+                ),
+                isActive: $isPresentingDetailView,
+                label: { EmptyView() }
+            )
+        })
     }
     
     var connectedDevicesContent: some View {
@@ -80,6 +93,10 @@ private extension DiscoveryView {
                 Spacer()
                 Image(systemName: Asset.info.rawValue)
                     .foregroundColor(Color.blue)
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                isPresentingDetailView = true
             }
         }
     }
@@ -103,7 +120,7 @@ private extension DiscoveryView {
     
     @ViewBuilder
     func headerSection(withTitle title: String, isSpinning: Bool = false) -> some View {
-        HStack(spacing: isSpinning ? Appearance.Padding.extraSmall : 0) {
+        HStack(spacing: Appearance.Padding.extraSmall) {
             Text(title)
             if isSpinning {
                 ProgressView()

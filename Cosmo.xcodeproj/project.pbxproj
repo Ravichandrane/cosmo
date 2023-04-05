@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		41101BC929DC6A7100AEB2E3 /* DeviceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */; };
+		411FE03029DDC87800671668 /* DiscoveryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE02F29DDC87800671668 /* DiscoveryDetailView.swift */; };
+		411FE03229DDC88300671668 /* DiscoveryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE03129DDC88300671668 /* DiscoveryDetailViewModel.swift */; };
 		4166EFC529DCE8B5004929D0 /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166EFC429DCE8B5004929D0 /* DiscoveryView.swift */; };
 		4166EFC829DCED17004929D0 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166EFC729DCED17004929D0 /* BLEManager.swift */; };
 		4166EFCA29DCFF59004929D0 /* DiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166EFC929DCFF59004929D0 /* DiscoveryViewModel.swift */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModel.swift; sourceTree = "<group>"; };
+		411FE02F29DDC87800671668 /* DiscoveryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailView.swift; sourceTree = "<group>"; };
+		411FE03129DDC88300671668 /* DiscoveryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailViewModel.swift; sourceTree = "<group>"; };
 		4166EFC429DCE8B5004929D0 /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		4166EFC729DCED17004929D0 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		4166EFC929DCFF59004929D0 /* DiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewModel.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		411FE02E29DDC86900671668 /* DiscoveryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				411FE02F29DDC87800671668 /* DiscoveryDetailView.swift */,
+				411FE03129DDC88300671668 /* DiscoveryDetailViewModel.swift */,
+			);
+			path = DiscoveryDetail;
+			sourceTree = "<group>";
+		};
 		4166EFC329DCE896004929D0 /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +213,7 @@
 				41F8F27C29DB5319007EE035 /* DeviceList */,
 				41F8F27D29DB5321007EE035 /* DeviceDetail */,
 				4166EFC329DCE896004929D0 /* Discovery */,
+				411FE02E29DDC86900671668 /* DiscoveryDetail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -398,11 +412,13 @@
 				41F8F29429DB54FA007EE035 /* Appearance.swift in Sources */,
 				41F4B21029DC6C51004A70D4 /* Device.swift in Sources */,
 				41F8F29029DB54BE007EE035 /* Localization.swift in Sources */,
+				411FE03229DDC88300671668 /* DiscoveryDetailViewModel.swift in Sources */,
 				41101BC929DC6A7100AEB2E3 /* DeviceListViewModel.swift in Sources */,
 				4166EFC829DCED17004929D0 /* BLEManager.swift in Sources */,
 				41F8F24C29DB5131007EE035 /* AppLauncher.swift in Sources */,
 				41DEE19129DCCA76001E4E1F /* DeviceDetailViewModel.swift in Sources */,
 				41F8F28529DB53C3007EE035 /* DeviceService.swift in Sources */,
+				411FE03029DDC87800671668 /* DiscoveryDetailView.swift in Sources */,
 				41F8F28A29DB5428007EE035 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -566,6 +582,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmo/App/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth is required to connect to your devices";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -601,6 +618,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmo/App/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth is required to connect to your devices";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -737,6 +755,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cosmo/App/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Bluetooth is required to connect to your devices";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

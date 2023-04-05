@@ -16,6 +16,7 @@ enum L10n {
         enum Title {
             static let devicesListView = L10n.tr("navigation.devicesListView.title")
             static let deviceDetailView = L10n.tr("navigation.deviceDetailView.title")
+            static let discovery = L10n.tr("navigation.discovery.title")
         }
     }
     
@@ -48,6 +49,23 @@ enum L10n {
                 static let firmware = L10n.tr("deviceDetail.row.label.firmware")
                 static let macAddress = L10n.tr("deviceDetail.row.label.macAddress")
                 static let serialNumber = L10n.tr("deviceDetail.row.label.serialNumber")
+            }
+        }
+    }
+    
+    enum Discovery {
+        enum Section {
+            enum Title {
+                static let myDevices = L10n.tr("discovery.section.title.myDevices")
+                static let otherDevices = L10n.tr("discovery.section.title.otherDevices")
+            }
+        }
+    }
+    
+    enum DiscoveryDetail {
+        enum Section {
+            enum Title {
+                static let characteristics = L10n.tr("discoveryDetail.section.title.characteristics")
             }
         }
     }

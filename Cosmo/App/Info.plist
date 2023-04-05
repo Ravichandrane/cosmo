@@ -11,7 +11,10 @@
 		<key>UISceneConfigurations</key>
 		<dict/>
 	</dict>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Bluetooth is required to connect to your devices</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+		<string>external-accessory</string>
+	</array>
 </dict>
 </plist>

@@ -23,33 +23,9 @@ struct DeviceDetailView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text(L10n.DeviceDetail.Section.Title.product)) {
-                    rowView(label: L10n.DeviceDetail.Row.Label.model, viewModel.deviceModel)
-                }
-                
-                Section(header: Text(L10n.DeviceDetail.Section.Title.settings)) {
-                    if let installationMode = viewModel.installationMode {
-                        rowView(label: L10n.DeviceDetail.Row.Label.installationMode, installationMode)
-                    }
-                    
-                    rowView(label: L10n.DeviceDetail.Row.Label.lightIntensity, viewModel.lightValue)
-                    rowView(label: L10n.DeviceDetail.Row.Label.brakeLight, "\(viewModel.brakeLight)")
-                    
-                    if let lightMode = viewModel.lightMode {
-                        rowView(label: L10n.DeviceDetail.Row.Label.lightMode, lightMode)
-                    }
-                    
-                    rowView(label: L10n.DeviceDetail.Row.Label.lightAuto, viewModel.lightAuto)
-                }
-                
-                Section(header: Text(L10n.DeviceDetail.Section.Title.information)) {
-                    rowView(label: L10n.DeviceDetail.Row.Label.firmware, viewModel.firmwareVersion)
-                    rowView(label: L10n.DeviceDetail.Row.Label.macAddress, viewModel.macAddress)
-                    
-                    if let serial = viewModel.serialNumber {
-                        rowView(label: L10n.DeviceDetail.Row.Label.serialNumber, serial)
-                    }
-                }
+                sectionProduct
+                sectionSettings
+                sectionInformation
             }
             .listStyle(.insetGrouped)
             .navigation(title: L10n.Navigation.Title.deviceDetailView, displayMode: .inline)
@@ -72,6 +48,40 @@ struct DeviceDetailView: View {
 
 // MARK: - UI
 private extension DeviceDetailView {
+    var sectionProduct: some View {
+        Section(header: Text(L10n.DeviceDetail.Section.Title.product)) {
+            rowView(label: L10n.DeviceDetail.Row.Label.model, viewModel.deviceModel)
+        }
+    }
+    
+    var sectionSettings: some View {
+        Section(header: Text(L10n.DeviceDetail.Section.Title.settings)) {
+            if let installationMode = viewModel.installationMode {
+                rowView(label: L10n.DeviceDetail.Row.Label.installationMode, installationMode)
+            }
+            
+            rowView(label: L10n.DeviceDetail.Row.Label.lightIntensity, viewModel.lightValue)
+            rowView(label: L10n.DeviceDetail.Row.Label.brakeLight, "\(viewModel.brakeLight)")
+            
+            if let lightMode = viewModel.lightMode {
+                rowView(label: L10n.DeviceDetail.Row.Label.lightMode, lightMode)
+            }
+            
+            rowView(label: L10n.DeviceDetail.Row.Label.lightAuto, viewModel.lightAuto)
+        }
+    }
+    
+    var sectionInformation: some View {
+        Section(header: Text(L10n.DeviceDetail.Section.Title.information)) {
+            rowView(label: L10n.DeviceDetail.Row.Label.firmware, viewModel.firmwareVersion)
+            rowView(label: L10n.DeviceDetail.Row.Label.macAddress, viewModel.macAddress)
+            
+            if let serial = viewModel.serialNumber {
+                rowView(label: L10n.DeviceDetail.Row.Label.serialNumber, serial)
+            }
+        }
+    }
+    
     @ViewBuilder
     func rowView(label: String, _ text: String) -> some View {
         HStack {

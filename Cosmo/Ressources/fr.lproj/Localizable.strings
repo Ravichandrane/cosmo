@@ -12,6 +12,7 @@ button.openSettings = "Ouvrir les paramètres";
 // Navigation Title
 navigation.devicesListView.title = "Cosmo";
 navigation.deviceDetailView.title = "Détail";
+navigation.discovery.title = "Bluetooth";
 
 // Authorization
 authorization.title.bluetooth = "Accès Bluetooth";
@@ -30,3 +31,10 @@ deviceDetail.row.label.lightAuto = "Lumière automatique";
 deviceDetail.row.label.firmware = "Firmware";
 deviceDetail.row.label.macAddress = "Mac Address";
 deviceDetail.row.label.serialNumber = "Numéro de série";
+
+// Discovery
+discovery.section.title.myDevices = "My devices";
+discovery.section.title.otherDevices = "Other devices";
+
+// Discovery detail
+discoveryDetail.section.title.characteristics = "Caractéristiques";
