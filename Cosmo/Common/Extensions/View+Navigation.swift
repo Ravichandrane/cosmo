@@ -22,5 +22,9 @@ extension View {
             )
         )
     }
+    
+    func addDismissToolbar() -> some View {
+        modifier(DismissToolbarModifier())
+    }
 
 }

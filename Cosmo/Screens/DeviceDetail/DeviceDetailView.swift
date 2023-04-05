@@ -27,21 +27,8 @@ struct DeviceDetailView: View {
                 sectionSettings
                 sectionInformation
             }
-            .listStyle(.insetGrouped)
             .navigation(title: L10n.Navigation.Title.deviceDetailView, displayMode: .inline)
-            .toolbar {
-                ToolbarItem(
-                    placement: .navigationBarLeading,
-                    content: {
-                        Button(action: {
-                            presentationMode.wrappedValue.dismiss()
-                        }, label: {
-                            Image(systemName: Asset.chevronDown.rawValue)
-                                .foregroundColor(Color.black)
-                        })
-                    }
-                )
-            }
+            .addDismissToolbar()
         }
     }
 }

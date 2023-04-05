@@ -10,6 +10,7 @@
 		41101BC929DC6A7100AEB2E3 /* DeviceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */; };
 		411FE03029DDC87800671668 /* DiscoveryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE02F29DDC87800671668 /* DiscoveryDetailView.swift */; };
 		411FE03229DDC88300671668 /* DiscoveryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE03129DDC88300671668 /* DiscoveryDetailViewModel.swift */; };
+		411FE03429DDDEC900671668 /* DismissToolbarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411FE03329DDDEC900671668 /* DismissToolbarModifier.swift */; };
 		4166EFC529DCE8B5004929D0 /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166EFC429DCE8B5004929D0 /* DiscoveryView.swift */; };
 		4166EFC829DCED17004929D0 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166EFC729DCED17004929D0 /* BLEManager.swift */; };
 		4166EFCA29DCFF59004929D0 /* DiscoveryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166EFC929DCFF59004929D0 /* DiscoveryViewModel.swift */; };
@@ -53,6 +54,7 @@
 		41101BC829DC6A7100AEB2E3 /* DeviceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModel.swift; sourceTree = "<group>"; };
 		411FE02F29DDC87800671668 /* DiscoveryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailView.swift; sourceTree = "<group>"; };
 		411FE03129DDC88300671668 /* DiscoveryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryDetailViewModel.swift; sourceTree = "<group>"; };
+		411FE03329DDDEC900671668 /* DismissToolbarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissToolbarModifier.swift; sourceTree = "<group>"; };
 		4166EFC429DCE8B5004929D0 /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		4166EFC729DCED17004929D0 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
 		4166EFC929DCFF59004929D0 /* DiscoveryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		41DEE18029DC85A7001E4E1F /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				411FE03329DDDEC900671668 /* DismissToolbarModifier.swift */,
 				41DEE18129DC85B3001E4E1F /* NavigationViewModifier.swift */,
 			);
 			path = Modifiers;
@@ -400,6 +403,7 @@
 				41DEE18229DC85B3001E4E1F /* NavigationViewModifier.swift in Sources */,
 				41F8F28E29DB5479007EE035 /* Colors.swift in Sources */,
 				41F8F27729DB52A2007EE035 /* AppConstant.swift in Sources */,
+				411FE03429DDDEC900671668 /* DismissToolbarModifier.swift in Sources */,
 				41F8F29229DB54D1007EE035 /* Asset.swift in Sources */,
 				41DEE18429DC85B8001E4E1F /* View+Navigation.swift in Sources */,
 				41F8F24E29DB5131007EE035 /* DeviceListView.swift in Sources */,

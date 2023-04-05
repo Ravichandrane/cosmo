@@ -22,7 +22,9 @@ struct DiscoveryView: View {
                 default:
                     permissionView
                 }
-            }.navigation(title: L10n.Navigation.Title.discovery, displayMode: .inline)
+            }
+            .navigation(title: L10n.Navigation.Title.discovery, displayMode: .inline)
+            .addDismissToolbar()
         }
         .onAppear {
             viewModel.requestPermission()
