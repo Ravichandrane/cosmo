@@ -12,4 +12,5 @@ enum Asset: String {
     case lightMin = "light.min"
     case chevronDown = "chevron.down"
     case connect = "bonjour"
+    case info = "info.circle"
 }

@@ -7,12 +7,19 @@
 
 import CoreBluetooth
 
+protocol BLEManagerDelegate: AnyObject {
+    func didUpdateState(_ state: CBManagerState)
+    func didDiscover(peripheral: CBPeripheral)
+    func didConnect(peripheral: CBPeripheral)
+}
+
 final class BLEManager: NSObject {
     // Properties
     @Published private(set) var updateState: CBManagerState = .unknown
     @Published private(set) var peripheral: CBPeripheral?
     
     private var central: CBCentralManager!
+    weak var delegate: BLEManagerDelegate?
     
     // MARK: - Initializer
     override init() {
@@ -26,19 +33,25 @@ final class BLEManager: NSObject {
     func scanForPeripherals(withServices services: [CBUUID]? = nil) {
         central.scanForPeripherals(withServices: services)
     }
+    
+    func connectPeripheral(_ peripheral: CBPeripheral) {
+        central.connect(peripheral)
+    }
 }
 
 // MARK: - CBCentralManagerDelegate
 extension BLEManager: CBCentralManagerDelegate {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        updateState = central.state
+        delegate?.didUpdateState(central.state)
     }
     
     func centralManager(_ central: CBCentralManager,
                         didDiscover peripheral: CBPeripheral,
                         advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        if peripheral.name != nil {
-            self.peripheral = peripheral
-        }
+        delegate?.didDiscover(peripheral: peripheral)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        delegate?.didConnect(peripheral: peripheral)
     }
 }

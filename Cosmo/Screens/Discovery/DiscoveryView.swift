@@ -63,14 +63,50 @@ private extension DiscoveryView {
     
     var discoveryView: some View {
         List {
-            Section(header: Text("My devices")) {
-                
-            }
+            Section(content: {
+                connectedDevicesContent
+            }, header: { headerSection(withTitle: "My Devices") })
             
-            Section(header: Text("Other devices")) {
-                ForEach(viewModel.peripherals, id: \.self) { peripheral in
+            Section(content: {
+                searchDevicesContent
+            }, header: { headerSection(withTitle: "Other devices", isSpinning: true) })
+        }
+    }
+    
+    var connectedDevicesContent: some View {
+        ForEach(viewModel.connectPeripherals, id: \.self) { peripheral in
+            HStack {
+                Text(peripheral.name ?? "")
+                Spacer()
+                Image(systemName: Asset.info.rawValue)
+                    .foregroundColor(Color.blue)
+            }
+        }
+    }
+    
+    var searchDevicesContent: some View {
+        ForEach(viewModel.peripherals, id: \.self) { peripheral in
+            Button(action: {
+                viewModel.connect(to: peripheral)
+            }, label: {
+                HStack(spacing: Appearance.Padding.extraSmall) {
                     Text(peripheral.name ?? "")
+                        .foregroundColor(Color.black)
+                    
+                    if viewModel.isConnecting(peripheral) {
+                        ProgressView()
+                    }
                 }
+            })
+        }
+    }
+    
+    @ViewBuilder
+    func headerSection(withTitle title: String, isSpinning: Bool = false) -> some View {
+        HStack(spacing: isSpinning ? Appearance.Padding.extraSmall : 0) {
+            Text(title)
+            if isSpinning {
+                ProgressView()
             }
         }
     }

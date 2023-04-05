@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Combine
 import CoreBluetooth
 
 @MainActor
@@ -14,36 +13,16 @@ final class DiscoveryViewModel: ObservableObject {
     // Properties
     @Published private(set) var bleState: CBManagerState = .unknown
     @Published private(set) var peripherals: [CBPeripheral] = []
+    @Published private(set) var connectPeripherals: [CBPeripheral] = []
     
+    @Published private var peripheralState: CBPeripheralState = .disconnected
+    private var selectedPeripheral: CBPeripheral?
     private let bleManager: BLEManager
-    private var cancellable: Set<AnyCancellable> = []
     
     // MARK: - Initializer
     init(bleManager: BLEManager = .init()) {
         self.bleManager = bleManager
-        sinkUpdateState()
-        sinkPeripheral()
-    }
-    
-    func sinkUpdateState() {
-        bleManager.$updateState
-            .sink {[weak self] state in
-                guard let self else { return }
-                self.bleState = state
-            }
-            .store(in: &cancellable)
-    }
-    
-    func sinkPeripheral() {
-        bleManager.$peripheral
-            .compactMap({ $0 })
-            .sink {[weak self] peripheral in
-                guard let self else { return }
-                if !self.peripherals.contains(peripheral) {
-                    self.peripherals.append(peripheral)
-                }
-            }
-            .store(in: &cancellable)
+        self.bleManager.delegate = self
     }
     
     func requestPermission() {
@@ -52,5 +31,38 @@ final class DiscoveryViewModel: ObservableObject {
     
     func scanForPeripherals() {
         bleManager.scanForPeripherals()
+    }
+    
+    func connect(to peripheral: CBPeripheral) {
+        peripheralState = .connecting
+        selectedPeripheral = peripheral
+        bleManager.connectPeripheral(peripheral)
+    }
+    
+    func isConnecting(_ peripheral: CBPeripheral) -> Bool {
+        selectedPeripheral != nil &&
+        selectedPeripheral == peripheral &&
+        peripheralState == .connecting
+    }
+}
+
+// MARK: - BLEManagerDelegate
+extension DiscoveryViewModel: BLEManagerDelegate {
+    func didUpdateState(_ state: CBManagerState) {
+        bleState = state
+    }
+    
+    func didDiscover(peripheral: CBPeripheral) {
+        if !peripherals.contains(peripheral) &&
+            peripheral.state == .disconnected &&
+            peripheral.name != nil {
+            peripherals.append(peripheral)
+        }
+    }
+    
+    func didConnect(peripheral: CBPeripheral) {
+        peripheralState = .connected
+        peripherals = peripherals.filter({ $0 != peripheral })
+        connectPeripherals.append(peripheral)
     }
 }
