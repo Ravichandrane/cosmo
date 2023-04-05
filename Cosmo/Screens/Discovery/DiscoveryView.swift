@@ -19,8 +19,10 @@ struct DiscoveryView: View {
                 switch viewModel.bleState {
                 case .poweredOn:
                     discoveryView
-                default:
+                case .unauthorized:
                     permissionView
+                default:
+                    ProgressView()
                 }
             }
             .navigation(title: L10n.Navigation.Title.discovery, displayMode: .inline)
