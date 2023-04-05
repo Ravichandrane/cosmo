@@ -2,11 +2,10 @@
 //  CosmoTests.swift
 //  CosmoTests
 //
-//  Created by Ravi Rajendran on 04/04/2023.
+//  Created by Ravi Rajendran on 05/04/2023.
 //
 
 import XCTest
-@testable import Cosmo
 
 final class CosmoTests: XCTestCase {
 
@@ -28,7 +27,7 @@ final class CosmoTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }
